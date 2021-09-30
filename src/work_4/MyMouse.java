@@ -1,4 +1,4 @@
-package Work_4;
+package work_4;
 
 import java.awt.*;
 import java.awt.event.*;

@@ -1,4 +1,4 @@
-package Work_1;
+package work_1;
 
 import java.lang.*;
 public class Book {

@@ -1,4 +1,4 @@
-package Work_3;
+package work_3;
 
 public class MovableCircle implements Movable {
     private int radius;

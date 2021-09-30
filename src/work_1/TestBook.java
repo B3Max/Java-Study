@@ -1,4 +1,4 @@
-package Work_1;
+package work_1;
 
 public class TestBook {
     public static void main (String[] args) {

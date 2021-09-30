@@ -1,4 +1,4 @@
-package Work_3;
+package work_3;
 
 public class MovablePoint implements Movable {
     int x = 0, y = 0, xSpeed = 0, ySpeed = 0;

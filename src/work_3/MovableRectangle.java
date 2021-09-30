@@ -1,4 +1,4 @@
-package Work_3;
+package work_3;
 
 public class MovableRectangle implements Movable {
     private MovablePoint topLeft = new MovablePoint(0,0,0,0), bottomRight = new MovablePoint(0,0,0,0);

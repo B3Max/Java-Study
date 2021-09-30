@@ -1,4 +1,4 @@
-package Work_4;
+package work_4;
 
 import javax.swing.*;
 class NullLayout extends JFrame

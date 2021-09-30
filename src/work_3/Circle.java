@@ -1,4 +1,4 @@
-package Work_3;
+package work_3;
 
 class Circle extends Shape {
     protected double radius;

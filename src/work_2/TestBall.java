@@ -1,4 +1,4 @@
-package Work_2;
+package work_2;
 
 //package balls;
 public class TestBall {
