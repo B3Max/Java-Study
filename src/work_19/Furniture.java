@@ -4,24 +4,12 @@ public abstract class Furniture {
     protected int numberOfLegs;
     protected String material;
 
-    public Furniture() {
-    }
+    public Furniture() {}
 
-    public void setMaterial(String material) {
-        this.material = material;
-    }
-
-    public void setNumberOfLegs(int numberOfLegs) {
-        this.numberOfLegs = numberOfLegs;
-    }
-
-    public int getNumberOfLegs() {
-        return this.numberOfLegs;
-    }
-
-    public String getMaterial() {
-        return this.material;
-    }
+    public abstract void setMaterial(String material);
+    public abstract void setNumberOfLegs(int numberOfLegs);
+    public abstract int getNumberOfLegs();
+    public abstract String getMaterial();
 
     @Override
     public String toString() {

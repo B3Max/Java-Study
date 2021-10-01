@@ -42,4 +42,20 @@ public class Locker extends Furniture {
                 ", height=" + height +
                 '}';
     }
+
+    public void setMaterial(String material) {
+        this.material = material;
+    }
+
+    public void setNumberOfLegs(int numberOfLegs) {
+        this.numberOfLegs = numberOfLegs;
+    }
+
+    public int getNumberOfLegs() {
+        return this.numberOfLegs;
+    }
+
+    public String getMaterial() {
+        return this.material;
+    }
 }
