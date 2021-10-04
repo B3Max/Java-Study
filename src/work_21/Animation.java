@@ -47,7 +47,6 @@ public class Animation extends JComponent implements ActionListener {
             case (8) -> image = new ImageIcon("src/work_21/pictures/8.png").getImage();
             case (9) -> image = new ImageIcon("src/work_21/pictures/9.png").getImage();
             case (10) -> image = new ImageIcon("src/work_21/pictures/10.png").getImage();
-
         }
         count++;
         if (count == 11)
