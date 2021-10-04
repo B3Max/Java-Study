@@ -14,11 +14,12 @@ public class Animation extends JComponent {
     public static void main(String[] args) {
         Animation animation = new Animation();
         JFrame f = new JFrame("Animation");
-        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        f.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         f.setSize(410, 310);
         f.setLocation(750, 300);
-        f.setVisible(true);
+        f.add(new Animation());
         f.add(animation);
+        f.setVisible(true);
         //f.addKeyListener(animation);
     }
 }
