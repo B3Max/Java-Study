@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 
 public class Animation extends JComponent {
-    Image image = new ImageIcon("work_21/pictures/0.png").getImage();
+    Image image = new ImageIcon("work_21/0.png").getImage();
 
     public void paint (Graphics g) {
         Graphics2D g2 = (Graphics2D)g;

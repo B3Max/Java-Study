@@ -8,7 +8,7 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
 public class Main extends JComponent implements KeyListener, ActionListener {
-    Image grass = new ImageIcon("work_21/pictures/0.png").getImage();
+    Image grass = new ImageIcon("work_21/0.png").getImage();
 
     public void paint (Graphics g) {
         Graphics2D gr = (Graphics2D)g;
