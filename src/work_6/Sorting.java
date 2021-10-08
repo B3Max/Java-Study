@@ -3,7 +3,7 @@ package work_6;
 import java.lang.Comparable;
 import java.util.Arrays;
 
-public class Sorting {
+public class Sorting implements Comparable {
     public static Comparable[] mergesort(Comparable[] array) {
         if (array.length == 1)
             return array;
@@ -31,5 +31,11 @@ public class Sorting {
             result[resIndex++] = sorted2[index2++];
         }
         return result;
+    }
+
+    @Override
+    public int compareTo(Object o) {
+
+        return 0;
     }
 }
