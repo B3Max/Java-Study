@@ -19,6 +19,9 @@ public class Test {
         for (Student res : s1) {
             System.out.println(res);
         }
+        for (Student res : s2) {
+            System.out.println(res);
+        }
         System.out.println();
         Student[] r = Sorting.mergesortInner(s1, s2);
         for (Student res : r) {
