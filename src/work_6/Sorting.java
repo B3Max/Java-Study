@@ -3,20 +3,24 @@ package work_6;
 import java.lang.Comparable;
 import java.util.Arrays;
 
-public class Sorting implements Comparable {
-    public static Comparable[] mergesort(Comparable[] array) {
+public class Sorting extends Student {
+    public Sorting(int age, String name, int grade) {
+        super(age, name, grade);
+    }
+
+    public static Student[] mergesort(Student[] array) {
         if (array.length <= 1)
             return array;
-        Comparable[] buffer1 = Arrays.copyOf(array, array.length / 2);
-        Comparable[] buffer2 = Arrays.copyOfRange(array, array.length / 2, array.length);
+        Student[] buffer1 = Arrays.copyOf(array, array.length / 2);
+        Student[] buffer2 = Arrays.copyOfRange(array, array.length / 2, array.length);
         return mergesortInner(buffer1, buffer2);
     }
 
-    public static Comparable[] mergesortInner(Comparable[] buffer1, Comparable[] buffer2) {
+    public static Student[] mergesortInner(Student[] buffer1, Student[] buffer2) {
 
-        Comparable[] sorted1 = mergesort(buffer1);
-        Comparable[] sorted2 = mergesort(buffer2);
-        Comparable[] result = new Comparable[sorted1.length + sorted2.length];
+        Student[] sorted1 = mergesort(buffer1);
+        Student[] sorted2 = mergesort(buffer2);
+        Student[] result = new Student[sorted1.length + sorted2.length];
 
         int index1 = 0, index2 = 0, resIndex = 0;
         while (index1 < sorted1.length && index2 < sorted2.length) {
@@ -31,11 +35,5 @@ public class Sorting implements Comparable {
             result[resIndex++] = sorted2[index2++];
         }
         return result;
-    }
-
-    @Override
-    public int compareTo(Object o) {
-
-        return 0;
     }
 }
