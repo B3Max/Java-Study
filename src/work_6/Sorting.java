@@ -1,6 +1,5 @@
 package work_6;
 
-import java.lang.Comparable;
 import java.util.Arrays;
 
 public class Sorting extends Student {

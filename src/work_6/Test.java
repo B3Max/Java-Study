@@ -23,8 +23,13 @@ public class Test {
             System.out.println(res);
         }
         System.out.println();
-        Student[] r = Sorting.mergesortInner(s1, s2);
-        for (Student res : r) {
+        Student[] r1 = Sorting.mergesort(s1);
+        for (Student res : r1) {
+            System.out.println(res);
+        }
+        System.out.println();
+        Student[] r2 = Sorting.mergesortInner(s1, s2);
+        for (Student res : r2) {
             System.out.println(res);
         }
     }
