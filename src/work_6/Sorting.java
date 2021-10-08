@@ -5,7 +5,7 @@ import java.util.Arrays;
 
 public class Sorting implements Comparable {
     public static Comparable[] mergesort(Comparable[] array) {
-        if (array.length == 1)
+        if (array.length <= 1)
             return array;
         Comparable[] buffer1 = Arrays.copyOf(array, array.length / 2);
         Comparable[] buffer2 = Arrays.copyOfRange(array, array.length / 2, array.length);

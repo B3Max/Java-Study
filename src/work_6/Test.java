@@ -10,7 +10,17 @@ public class Test {
         //Comparable[] result = Sorting.mergesortInner(array1, array2);
 
 
-        //Student s = new Student()
+        Student[] s = new Student[] {
+                new Student(16, "Antony", 8),
+                new Student(23, "Stanislaw", 0),
+                new Student(8, "Giorgio", 3),
+                new Student(3, "Kirill", 0),
+                new Student(10, "Max", 5),
+        };
+
+        for (Student res : s) {
+            System.out.println(res);
+        }
         //for (Comparable index : result) {
         //    System.out.print(index + ", ");
         //}
