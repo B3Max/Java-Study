@@ -13,8 +13,8 @@ public class Test {
                 new Student(7, "Name1", 1),
                 new Student(11, "Name2", 2),
                 new Student(2, "Name3", 3),
-                new Student(6, "Name4", 4),
-                new Student(59, "Name5", 5),
+                new Student(59, "Name4", 4),
+                new Student(6, "Name5", 5),
         };
         for (Student res : s1) {
             System.out.println(res);
@@ -22,11 +22,11 @@ public class Test {
         for (Student res : s2) {
             System.out.println(res);
         }
-        System.out.println();
-        Student[] r1 = Sorting.mergesort(s1);
-        for (Student res : r1) {
-            System.out.println(res);
-        }
+//        System.out.println();
+//        Student[] r1 = Sorting.mergesort(s1);
+//        for (Student res : r1) {
+//            System.out.println(res);
+//        }
         System.out.println();
         Student[] r2 = Sorting.mergesortInner(s1, s2);
         for (Student res : r2) {
