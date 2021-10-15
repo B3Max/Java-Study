@@ -12,7 +12,7 @@ public interface IWaitList<E> {
      * Вставка элемента в список
      * @param element - объект для вставки
      */
-    public void add(E element);
+    void add(E element);
 
     /**
      * Удаление объекта из списка

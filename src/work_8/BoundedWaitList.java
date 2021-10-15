@@ -8,7 +8,7 @@ public class BoundedWaitList<E> extends WaitList<E> {
     /**
      * Размер списка
      */
-    private int capacity;
+    private final int capacity;
 
     /**
      * Конструктор создающий список конкретного размера
