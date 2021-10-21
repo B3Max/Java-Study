@@ -4,9 +4,9 @@ import javax.swing.*;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class FilesApp extends JFrame {
+public class FilesRead extends JFrame {
 
-    public FilesApp() {
+    public FilesRead() {
         JFrame f = new JFrame("Your text");
         f.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         f.setSize(1280, 720);
@@ -32,6 +32,6 @@ public class FilesApp extends JFrame {
     }
 
     public static void main(String[] args) {
-        new FilesApp();
+        new FilesRead();
     }
 }

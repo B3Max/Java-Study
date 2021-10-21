@@ -3,9 +3,9 @@ package work_22;
 import javax.swing.*;
 import java.awt.*;
 
-public class Main extends JFrame {
+public class TextChange extends JFrame {
 
-    public Main() {
+    public TextChange() {
         JFrame f = new JFrame("Choose your destiny");
         f.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         f.setSize(500, 500);
@@ -51,6 +51,6 @@ public class Main extends JFrame {
     }
 
     public static void main(String[] args) {
-        new Main();
+        new TextChange();
     }
 }
