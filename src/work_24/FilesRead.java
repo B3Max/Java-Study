@@ -10,7 +10,7 @@ public class FilesRead extends JFrame {
         JFrame f = new JFrame("Your text");
         f.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         f.setSize(1280, 720);
-        f.setLocation(250, 150);
+        //f.setLocation(250, 150);
 
         JTextArea txt = new JTextArea();
         txt.setLineWrap(true);

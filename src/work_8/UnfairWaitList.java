@@ -21,6 +21,10 @@ public class UnfairWaitList<E> extends WaitList<E> {
         boolean removed = false;
         for (int i = 0; i < content.size(); i++) {
             E x = content.remove();
+            if (x.equals(element) && i == 0) {
+                content.add(x);
+                break;
+            }
             if (!removed && x.equals(element)) {
                 removed = true;
                 i--;

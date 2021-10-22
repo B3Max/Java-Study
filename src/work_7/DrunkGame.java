@@ -48,7 +48,8 @@ public class DrunkGame {
         new DrunkGame("12345", "67890");
         new DrunkGame("67890", "12345"); // 61728394 05 - 72839460 15
         new DrunkGame("13570", "24689");
-        new DrunkGame("25869", "14703");
+        new DrunkGame("14739", "25860");
         new DrunkGame("19283", "45670"); // 958730 1426
+        new DrunkGame("13570", "24689");
     }
 }

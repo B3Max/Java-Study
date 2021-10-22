@@ -49,16 +49,12 @@ public class Main {
         System.out.println(b);
 
         UnfairWaitList<Integer> u = new UnfairWaitList<>();
-        u.add(1);
-        u.add(2);
-        u.add(3);
-        u.add(4);
-        u.add(5);
-        u.add(6);
+        for (int i = 0; i < 7; i++)
+            u.add(i+1);
         System.out.println(u);
         u.remove(5);
         System.out.println(u);
-        u.remove(2);
+        u.remove(1);
         System.out.println(u);
         u.moveToBack(3);
         System.out.println(u);
