@@ -1,4 +1,4 @@
-package work_25.ex3;
+package work_25;
 
 import java.util.Scanner;
 
@@ -9,7 +9,7 @@ import java.util.Scanner;
 Перезапустите программу с приведенными выше данными и обратите внимание на ее поведение. Объясните новое поведение программы
  */
 
-public class Exception2 {
+public class Exception3 {
     public void exceptionDemo() {
         try {
             Scanner myScanner = new Scanner(System.in);
@@ -27,7 +27,7 @@ public class Exception2 {
     }
 
     public static void main(String[] args) {
-        Exception2 e2 = new Exception2();
+        Exception3 e2 = new Exception3();
         e2.exceptionDemo();
     }
 }

@@ -1,4 +1,4 @@
-package work_25.ex1;
+package work_25;
 
 public class Exception1 {
     public void exceptionDemo(){

@@ -1,22 +1,13 @@
-package work_25.ex8;
+package work_25;
 
 import java.util.Scanner;
 
-public class ThrowsDemo {
-    public void getKey() {
+public class ThrowsDemo3 {
+    public void getKey() throws Exception {
         Scanner myScanner = new Scanner(System.in);
-
-        boolean anchor = false;
-        do {
-            anchor = false;
-            System.out.print("Enter Key ");
-            String key = myScanner.nextLine();
-            try {
-                printDetails(key);
-            } catch (Exception e) {
-                anchor = true;
-            }
-        } while (anchor);
+        System.out.print("Enter Key ");
+        String key = myScanner.nextLine();
+        printDetails(key);
     }
 
     public void printDetails(String key) throws Exception {
@@ -32,7 +23,7 @@ public class ThrowsDemo {
     }
 
     public static void main(String[] args) {
-        ThrowsDemo td = new ThrowsDemo();
+        ThrowsDemo3 td = new ThrowsDemo3();
         try {
             td.getKey();
         } catch (Exception e) {

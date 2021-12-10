@@ -1,8 +1,8 @@
-package work_25.ex6;
+package work_25;
 
 import java.util.Scanner;
 
-public class ThrowsDemo {
+public class ThrowsDemo2 {
     public void getKey() {
         Scanner myScanner = new Scanner(System.in);
         String key = myScanner.next();

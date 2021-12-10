@@ -1,4 +1,4 @@
-package work_25.ex5;
+package work_25;
 
 public class ThrowsDemo {
 
