@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Objects;
 
-public class Lab10 {
+public class Main {
     // 1. Написать метод для конвертации массива строк/чисел в список.
     public static <E> ArrayList<E> arrayToList(E[] arr){
         if(arr == null)
