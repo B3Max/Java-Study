@@ -7,7 +7,6 @@ import java.util.Scanner;
 В вашем решении в предыдущем упражнении вы можете добавить новый пункт - catch в начале списка пунктов catch.
 Выполите это, чтобы поймать общее исключение класса Exception.
 Перезапустите программу с приведенными выше данными и обратите внимание на ее поведение. Объясните новое поведение программы
-
  */
 
 public class Exception2 {
@@ -19,7 +18,7 @@ public class Exception2 {
             int i = Integer.parseInt(intString);
             System.out.println(2 / i);
         }
-        catch (NumberFormatException e){             // Compile error: NumberFormatException already catched
+        catch (NumberFormatException e){             // Compile error: NumberFormatException already caught
                 System.out.println("Not correct number");
         }
         catch(Exception e) {

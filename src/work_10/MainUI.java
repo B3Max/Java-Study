@@ -6,8 +6,9 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.concurrent.atomic.AtomicReference;
 
-public class Main extends JFrame {
+public class MainUI extends JFrame {
 
     static JFrame f = new JFrame();
     static JTextArea area = new JTextArea();
@@ -27,7 +28,7 @@ public class Main extends JFrame {
     public static void main(String[] args) {
 
         AbstractFactory factory = new CreateTextDocument();
-        String file_name = "New_file";
+        AtomicReference<String> file_name = new AtomicReference<>("defaultName");
 
         f.setSize(800, 600);
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -44,37 +45,44 @@ public class Main extends JFrame {
         JMenu new_menu = new JMenu("New");
         JMenuItem text_menu_item = new JMenuItem("Text");
         text_menu_item.addActionListener(e -> {
-            try {
-                factory.createDoc("text", file_name);
-                workWithTextFile(f, System.getProperty("user.dir") + "\\src\\work_10\\" + file_name + ".txt");
-            } catch (IOException ioException) {
-                // Возникает необрабатываемое исключение без блока try-catch
-                // Метод printStackTrace () класса Java.lang.Throwable, используемый для печати этого
-                // Throwable, наряду с другими деталями, такими как имя класса и номер строки, где
-                // произошло исключение, означает его обратную трассировку (Процесс пошагового выполнения программы).
-                ioException.printStackTrace();
-            }
+            JFrame f2 = new JFrame();
+            f2.setSize(100, 100);
+            f2.setLocationRelativeTo(null);
+            f2.setLayout(new GridLayout(2, 1));
+            JTextField field = new JTextField("Enter_file_name");
+            f2.add(field);
+            JButton butOK = new JButton("ОК");
+            f2.add(butOK);
+            butOK.addActionListener(e1 -> {
+                try {
+                    f2.dispose();
+                    file_name.set(field.getText());
+                    factory.createDoc("text", file_name.get());
+                    workWithTextFile(f, System.getProperty("user.dir") + "\\src\\work_10\\" + file_name + ".txt");
+                } catch (IOException ioException) {
+                    ioException.printStackTrace();
+                }
+            });
+            f2.setVisible(true);
         });
 
         // Здесь можно будет создать изображение
-        JMenuItem img_menu_item = new JMenuItem("Image (decorative)");
+        JMenuItem img_menu_item = new JMenuItem("Image (update later)");
 
         // Здесь можно будет создать аудио
-        JMenuItem music_menu_item = new JMenuItem("Music (decorative)");
+        JMenuItem music_menu_item = new JMenuItem("Music (update later)");
         file_menu.add(new_menu);
         new_menu.add(text_menu_item);
         new_menu.add(music_menu_item);
         new_menu.add(img_menu_item);
 
         // Открытие файла
-
         JMenuItem open_menu_item = new JMenuItem("Open recent");
         open_menu_item.addActionListener(e -> {
             final String[] path_file = {""};
             //указание пути
             JFrame f1 = new JFrame();
-            f1.setSize(250, 100);
-            f1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            f1.setSize(350, 100);
             f1.setLocationRelativeTo(null);
             f1.setLayout(new GridLayout(2, 1));
             JTextField field = new JTextField(System.getProperty("user.dir") + "\\src\\work_10\\" + file_name + ".txt");
@@ -97,7 +105,6 @@ public class Main extends JFrame {
         });
 
         // Сохранение файла
-
         JMenuItem save_menu_item = new JMenuItem("Save");
         save_menu_item.addActionListener(e -> {
             if (area.isVisible()) {
@@ -113,7 +120,6 @@ public class Main extends JFrame {
 
         // Выход
         JMenuItem exit_menu_item = new JMenuItem("Close");
-
         exit_menu_item.addActionListener(e -> {
             f.getContentPane().removeAll();
             f.setJMenuBar(bar);

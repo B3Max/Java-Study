@@ -16,6 +16,5 @@ public class Exception1 {
         Exception1 e1 = new Exception1();
         e1.exceptionDemo2();
         e1.exceptionDemo();
-
     }
 }

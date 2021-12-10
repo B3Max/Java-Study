@@ -6,25 +6,27 @@ public class ThrowsDemo {
     public void getKey() {
         Scanner myScanner = new Scanner(System.in);
 
-        boolean incor = false;
+        boolean anchor = false;
         do {
-            incor = false;
+            anchor = false;
             System.out.print("Enter Key ");
             String key = myScanner.nextLine();
-            try{
+            try {
                 printDetails(key);
-            }catch (Exception e){
-                incor = true;
+            } catch (Exception e) {
+                anchor = true;
             }
-        }while (incor);
+        } while (anchor);
     }
 
     public void printDetails(String key) throws Exception {
         String message = getDetails(key);
-        System.out.println( message ); }
+        System.out.println(message);
+    }
+
     private String getDetails(String key) throws Exception {
-        if(key.equals("")) {
-            throw new Exception( "Key set to empty string" );
+        if (key.equals("")) {
+            throw new Exception("Key set to empty string");
         }
         return "data for " + key;
     }
@@ -33,7 +35,7 @@ public class ThrowsDemo {
         ThrowsDemo td = new ThrowsDemo();
         try {
             td.getKey();
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }

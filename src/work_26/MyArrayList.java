@@ -3,6 +3,8 @@ package work_26;
 import java.util.Arrays;
 import java.util.Comparator;
 
+//2. Написать класс, который умеет хранить в себе массив любых типов данных (int, long etc.).
+
 public class MyArrayList <T>{
     private T[] l;
     private int count;
