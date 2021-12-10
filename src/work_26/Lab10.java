@@ -45,12 +45,14 @@ public class Lab10 {
     // MAIN
     public static void main(String[] args) {
         //test1
+        System.out.println("TEST 1");
         String[] a = new String[]{"Hello", "world", "!"};
         ArrayList<String> l = arrayToList(a);
         System.out.println(l);
         System.out.println();
 
         //test2
+        System.out.println("TEST 2");
         MyArrayList<Integer> ints = new MyArrayList<>(8);
         for(int i = 0; i<20;i++)
             ints.add(i);
@@ -81,11 +83,13 @@ public class Lab10 {
         System.out.println();
 
         // test3
+        System.out.println("TEST 3");
         System.out.println(get(a, 0));
         System.out.println(get(a, 2));
         System.out.println();
 
         // test4
+        System.out.println("TEST 4");
         ArrayList<File> lf = readDir(Paths.get("").toAbsolutePath().toString());
         System.out.println();
         System.out.println(lf);
