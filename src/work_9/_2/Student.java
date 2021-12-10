@@ -1,4 +1,4 @@
-package work_9.ex2;
+package work_9._2;
 
 public class Student implements Comparable<Student>{
     private String fio;

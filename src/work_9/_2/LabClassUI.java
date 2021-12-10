@@ -1,4 +1,4 @@
-package work_9.ex2;
+package work_9._2;
 
 import javax.swing.*;
 import javax.swing.event.MouseInputListener;
@@ -11,10 +11,10 @@ import java.util.Comparator;
 
 public class LabClassUI extends JFrame {
 
-    private ArrayList<Student> students;
-    private JTable studTable;
+    private final ArrayList<Student> students;
+    private final JTable studTable;
 
-    public LabClassUI(ArrayList<Student> students){
+    public LabClassUI(ArrayList<Student> students) {
         // base
         super("Студенты");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -36,54 +36,50 @@ public class LabClassUI extends JFrame {
         addStudentBtn.addActionListener(e -> {
             try {
                 addBtnClicked();
-            }catch (IllegalArgumentException ex){
+            } catch (IllegalArgumentException ex) {
                 JOptionPane.showMessageDialog(this, ex.getMessage());
             }
         });
 
-        remStudentBtn.addActionListener(e-> remBtnClicked());
+        remStudentBtn.addActionListener(e -> remBtnClicked());
 
-        findStudentBtn.addActionListener(e->{
-            try{
+        findStudentBtn.addActionListener(e -> {
+            try {
                 findBtnClicked();
-            }catch (StudentNotFoundException ex){
+            } catch (StudentNotFoundException ex) {
                 JOptionPane.showMessageDialog(this, ex.getMessage());
             }
         });
 
         // JTable
-        Object[] headers = new String[] {"ФИО", "Возраст", "Группа", "Средний балл"};
-        Object [][] startStudents = new String[students.size()][4];
-        for(int i = 0; i < students.size(); i++){
+        Object[] headers = new String[]{"ФИО", "Возраст", "Группа", "Средний балл"};
+        Object[][] startStudents = new String[students.size()][4];
+        for (int i = 0; i < students.size(); i++) {
             startStudents[i][0] = students.get(i).getFio();
-            startStudents[i][1] = ((Integer)(students.get(i).getAge())).toString();
-            startStudents[i][2] = ((Integer)(students.get(i).getGroupNum())).toString();
-            startStudents[i][3] = ((Integer)(students.get(i).getAvgPoint())).toString();
+            startStudents[i][1] = ((Integer) (students.get(i).getAge())).toString();
+            startStudents[i][2] = ((Integer) (students.get(i).getGroupNum())).toString();
+            startStudents[i][3] = ((Integer) (students.get(i).getAvgPoint())).toString();
         }
-        studTable = new JTable( new DefaultTableModel(startStudents, headers)){
+        studTable = new JTable(new DefaultTableModel(startStudents, headers)) {
             @Override
-            public boolean isCellEditable(int x, int y){
+            public boolean isCellEditable(int x, int y) {
                 return false;
             }
         };
 
         JTableHeader header = studTable.getTableHeader();
-        header.setReorderingAllowed(false);
-        header.setResizingAllowed(false);
 
-        // Почему на него нельзя повесить ActionListener?..
         header.addMouseListener(new MouseInputListener() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                int count = e.getClickCount();
-                if (count == 2){
-                    if(header.getHeaderRect(0).contains(e.getX(), e.getY()))
+                if (e.getClickCount() > 0) {
+                    if (header.getHeaderRect(0).contains(e.getX(), e.getY()))
                         sortStudents(Student::compareTo);
-                    if(header.getHeaderRect(1).contains(e.getX(), e.getY()))
+                    if (header.getHeaderRect(1).contains(e.getX(), e.getY()))
                         sortStudents(Student.AGE_COMP);
-                    if(header.getHeaderRect(2).contains(e.getX(), e.getY()))
+                    if (header.getHeaderRect(2).contains(e.getX(), e.getY()))
                         sortStudents(Student.GROUP_COMP);
-                    if(header.getHeaderRect(3).contains(e.getX(), e.getY()))
+                    if (header.getHeaderRect(3).contains(e.getX(), e.getY()))
                         sortStudents(Student.AVG_COMP);
                 }
             }
@@ -127,15 +123,14 @@ public class LabClassUI extends JFrame {
         setVisible(true);
     }
 
-    private void sortStudents(Comparator<Student> comp){
-        Student temp;
+    private void sortStudents(Comparator<Student> comp) {
         for (int i = 1; i < students.size(); i++) {
             Student current = students.get(i);
-            int j = i-1;
-            for(; j >= 0 && comp.compare(current, students.get(j)) < 0; j--) {
-                students.set(j+1, students.get(j));
+            int j = i - 1;
+            for (; j >= 0 && comp.compare(current, students.get(j)) < 0; j--) {
+                students.set(j + 1, students.get(j));
             }
-            students.set(j+1, current);
+            students.set(j + 1, current);
         }
         DefaultTableModel dtm = (DefaultTableModel) studTable.getModel();
 
@@ -148,10 +143,10 @@ public class LabClassUI extends JFrame {
 
     private void findBtnClicked() throws StudentNotFoundException {
         String s = JOptionPane.showInputDialog("Введите искомые ФИО");
-        for(int i = 0; i < students.size(); i++){
-            if(students.get(i).getFio().equals(s)){
-                JOptionPane.showMessageDialog(this, "Найден студент: "+
-                        students.get(i).toString());
+        for (Student student : students) {
+            if (student.getFio().equals(s)) {
+                JOptionPane.showMessageDialog(this, "Найден студент: " +
+                        student);
                 return;
             }
         }
@@ -160,7 +155,7 @@ public class LabClassUI extends JFrame {
 
     private void remBtnClicked() {
         int c = studTable.getSelectedRowCount();
-        if(c != 1) {
+        if (c != 1) {
             JOptionPane.showMessageDialog(this, "Выберете ровно одну строку!");
             return;
         }
@@ -174,20 +169,20 @@ public class LabClassUI extends JFrame {
 
     private void addBtnClicked() throws IllegalArgumentException {
         String fio = JOptionPane.showInputDialog("Пожалуйста, введите фио!");
-        if(fio.equals("")) throw new EmptyStringException();
+        if (fio.equals("")) throw new EmptyStringException();
         String age = JOptionPane.showInputDialog("Пожалуйста, введите возраст!");
         String group = JOptionPane.showInputDialog("Пожалуйста, введите номер группы!");
         String avg = JOptionPane.showInputDialog("Пожалуйста, введите средний балл!");
 
-        int avgI =0;
-        int groupI = 0;
-        int ageI =0;
+        int avgI;
+        int groupI;
+        int ageI;
         try {
             avgI = Integer.parseInt(avg);
             groupI = Integer.parseInt(group);
             ageI = Integer.parseInt(age);
-        }catch (NumberFormatException e){
-            throw new NumberFormatException("Невозможно строку "+e.getMessage().substring(17) + " в число!");
+        } catch (NumberFormatException e) {
+            throw new NumberFormatException("Невозможно строку " + e.getMessage().substring(17) + " перевести в число!");
         }
 
         students.add(new Student(fio, avgI, groupI, ageI));

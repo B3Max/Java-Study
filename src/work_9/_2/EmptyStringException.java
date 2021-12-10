@@ -1,4 +1,4 @@
-package work_9.ex2;
+package work_9._2;
 
 public class EmptyStringException extends IllegalArgumentException {
     public EmptyStringException() {
