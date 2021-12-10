@@ -22,12 +22,12 @@ public class ThrowsDemo3 {
         return "data for " + key;
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         ThrowsDemo3 td = new ThrowsDemo3();
-        try {
+//        try {
             td.getKey();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
     }
 }
