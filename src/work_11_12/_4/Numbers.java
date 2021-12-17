@@ -1,4 +1,4 @@
-package work_12._4;
+package work_11_12._4;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -33,10 +33,10 @@ public class Numbers {
             throw new IllegalArgumentException("Wrong international phone number format.");
 
         return new Numbers(
-                Integer.parseInt(String.valueOf(src.charAt(1))),
-                Integer.parseInt(src.substring(2, 5)),
-                Integer.parseInt(src.substring(5, 8)),
-                Integer.parseInt(src.substring(8, 12))
+                Integer.parseInt(src.substring(0, src.length()-10)),
+                Integer.parseInt(src.substring(src.length()-10, src.length()-7)),
+                Integer.parseInt(src.substring(src.length()-7, src.length()-4)),
+                Integer.parseInt(src.substring(src.length()-4))
         );
     }
 

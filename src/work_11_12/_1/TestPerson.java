@@ -1,4 +1,4 @@
-package work_12._1;
+package work_11_12._1;
 
 public class TestPerson {
     public static void main(String[] args) {

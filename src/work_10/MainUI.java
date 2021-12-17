@@ -27,7 +27,9 @@ public class MainUI extends JFrame {
 
     public static void main(String[] args) {
 
-        AbstractFactory factory = new CreateTextDocument();
+        AbstractFactory factory1 = new FactoryText();
+        AbstractFactory factory2 = new FactoryImg();
+        AbstractFactory factory3 = new FactoryMusic();
         AtomicReference<String> file_name = new AtomicReference<>("defaultName");
 
         f.setSize(800, 600);
@@ -57,7 +59,7 @@ public class MainUI extends JFrame {
                 try {
                     f2.dispose();
                     file_name.set(field.getText());
-                    factory.createDoc("text", file_name.get());
+                    factory1.createNew(file_name.get());
                     workWithTextFile(f, System.getProperty("user.dir") + "\\src\\work_10\\" + file_name + ".txt");
                 } catch (IOException ioException) {
                     ioException.printStackTrace();
@@ -67,10 +69,51 @@ public class MainUI extends JFrame {
         });
 
         // Здесь можно будет создать изображение
-        JMenuItem img_menu_item = new JMenuItem("Image (update later)");
+        JMenuItem img_menu_item = new JMenuItem("Image");
+        img_menu_item.addActionListener(e -> {
+            JFrame f2 = new JFrame();
+            f2.setSize(100, 100);
+            f2.setLocationRelativeTo(null);
+            f2.setLayout(new GridLayout(2, 1));
+            JTextField field = new JTextField("Enter_file_name");
+            f2.add(field);
+            JButton butOK = new JButton("ОК");
+            f2.add(butOK);
+            butOK.addActionListener(e1 -> {
+                try {
+                    f2.dispose();
+                    file_name.set(field.getText());
+                    factory2.createNew(file_name.get());
+                } catch (IOException ioException) {
+                    ioException.printStackTrace();
+                }
+            });
+            f2.setVisible(true);
+        });
 
         // Здесь можно будет создать аудио
-        JMenuItem music_menu_item = new JMenuItem("Music (update later)");
+        JMenuItem music_menu_item = new JMenuItem("Music");
+        music_menu_item.addActionListener(e -> {
+            JFrame f2 = new JFrame();
+            f2.setSize(100, 100);
+            f2.setLocationRelativeTo(null);
+            f2.setLayout(new GridLayout(2, 1));
+            JTextField field = new JTextField("Enter_file_name");
+            f2.add(field);
+            JButton butOK = new JButton("ОК");
+            f2.add(butOK);
+            butOK.addActionListener(e1 -> {
+                try {
+                    f2.dispose();
+                    file_name.set(field.getText());
+                    factory3.createNew(file_name.get());
+                } catch (IOException ioException) {
+                    ioException.printStackTrace();
+                }
+            });
+            f2.setVisible(true);
+        });
+
         file_menu.add(new_menu);
         new_menu.add(text_menu_item);
         new_menu.add(music_menu_item);

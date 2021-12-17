@@ -53,33 +53,15 @@ public class Main {
 
         //test2
         System.out.println("TEST 2");
-        MyArrayList<Integer> ints = new MyArrayList<>(8);
-        for(int i = 0; i<20;i++)
-            ints.add(i);
-        System.out.println(ints);
-        for(int i = 5; i < 13; i++)
-            ints.remove(i);
-        System.out.println(ints);
-        System.out.println(ints.get(5));
-        System.out.println();
+        String[] arr = new String[]{"1", "2", "3", "4", "5"};
+        task2 <Object> strs = new task2<>();
+        strs.setArr(arr);
+        System.out.println(strs.getIndex(2));
 
-        MyArrayList<String> strings = new MyArrayList<>();
-        System.out.println(strings);
-        for (int i = 0; i < 10; i++) {
-            strings.add("String number " + (i+1));
-        }
-        System.out.println(strings);
-        System.out.println();
-
-        MyArrayList<String> strings2 = new MyArrayList<>(strings);
-        System.out.println(strings2);
-        strings2.remove(5);
-        System.out.println(strings2.get(5));
-        System.out.println(strings.get(5));
-        strings2.addAll(strings2.getCount(), strings.subList(4, 8));
-        System.out.println(strings2);
-        strings2.sort(String::compareTo);
-        System.out.println(strings2);
+        Integer[] arr2 = new Integer[]{5, 4, 3, 2, 1};
+        task2 <Object> ints = new task2<>();
+        ints.setArr(arr2);
+        System.out.println(ints.getIndex(1));
         System.out.println();
 
         // test3

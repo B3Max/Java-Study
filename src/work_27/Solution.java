@@ -26,11 +26,11 @@ public class Solution {
     }
 
     public static void main(String[] args) {
-        String[] a = new String[]{"Hello", "world", "!"};
+        String[] a = new String[]{"Hello", "world", "!", "Hello"};
         HashSet<String> hs = arrayToHashSet(a);
         System.out.println(hs);
 
-        HashMap<String, String> m = arrayToHashMap(a, new String[]{"H", "w", "!"});
+        HashMap<String, String> m = arrayToHashMap(a, new String[]{"H", "w", "!", "test"});
         System.out.println(m);
     }
 }

@@ -38,11 +38,11 @@ public class RegEx {
     public static void main(String[] args) {
 
         RegEx regEx = new RegEx();
-        regEx.getPrice("TEST 25.98 USD, 155.10 RUB, 99.50 EU");
+        regEx.getPrice("25.98 USD, 155.10 RUB, 99.50 EU");
         regEx.getPrice("TEST 25.98 $, 155.10 RU, 99.50 ERR");
         System.out.println(regEx.hasPlus("2 + 2"));
-        System.out.println(regEx.hasPlus("2 / 2"));
-        System.out.println(regEx.isData("29/02/2000"));
+        System.out.println(regEx.hasPlus("2 / 2 +"));
+        System.out.println(regEx.isData("31/04/2000"));
         System.out.println(regEx.isData("1/1/1899"));
         System.out.println(regEx.isEmail("test@mail.ru"));
         System.out.println(regEx.isEmail("testerror%%ru"));
